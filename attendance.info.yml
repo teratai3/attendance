@@ -1,0 +1,5 @@
+name: 'attendance'
+type: module
+description: '勤怠管理機能を追加します'
+package: Custom
+core_version_requirement: ^10 || ^11

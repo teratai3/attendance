@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the attendance module.
+ */
+
+
+
+
+/**
+ * Implements hook_schema().
+ */
+function attendance_schema()
+{
+    $schema['attendances'] = [
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => true,
+                'unsigned' => true,
+            ],
+            'user_id' => [
+                'type' => 'int',
+                'not null' => true,
+                'unsigned' => true,
+            ],
+            'record_date' => [
+                'mysql_type' => 'date',
+                'not null' => true,
+                'description' => '記録日'
+            ],
+            'start_time' => [
+                'mysql_type' => 'time',
+                'not null' => false,
+                'description' => '開始時間'
+            ],
+            'end_time' => [
+                'mysql_type' => 'time',
+                'not null' => false,
+                'description' => '終了時間'
+            ],
+            'remarks' => [
+                'type' => 'text',
+                'size' => 'normal',
+                'description' => '備考'
+            ],
+        ],
+        'primary key' => ['id'],
+        'indexes' => [
+            'user_id' => ['user_id'],
+        ],
+        // 'foreign keys' => [
+        //     'fk_user_id' => [
+        //         'table' => 'users',
+        //         'columns' => ['user_id' => 'uid'],
+        //     ],
+        // ],
+    ];
+    return $schema;
+}

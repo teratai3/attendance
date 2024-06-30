@@ -1,0 +1,7 @@
+services:
+  drupal.attendance.attendance_model:
+    class: 'Drupal\attendance\Model\AttendanceModel'
+
+  drupal.attendance.attendance_service:
+    class: 'Drupal\attendance\Service\AttendanceService'
+    arguments: ['@drupal.attendance.attendance_model', '@current_user']

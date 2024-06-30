@@ -1,0 +1,44 @@
+attendance.form:
+  path: "/admin/attendance"
+  defaults:
+    _form: '\Drupal\attendance\Form\AttendanceForm'
+    _title: "勤怠管理"
+  requirements:
+    _permission: "access content"
+
+attendance.list:
+  path: "/admin/attendance/list"
+  defaults:
+    _controller: '\Drupal\attendance\Controller\AttendanceController::list'
+    _title: "勤怠管理一覧"
+  requirements:
+    _permission: "access content"
+
+attendance.admin_list:
+  path: "/admin/attendance/admin_list"
+  defaults:
+    _controller: '\Drupal\attendance\Controller\AttendanceController::admin_list'
+    _title: "勤怠管理 管理者用"
+  requirements:
+    _permission: "administer site configuration"
+
+attendance.remarks_form:
+  path: "/admin/attendance/remarks/add"
+  defaults:
+    _form: '\Drupal\attendance\Form\RemarksForm'
+    _title: "勤怠管理 備考欄追加"
+  requirements:
+    _permission: "access content"
+
+attendance.remarks_form_edit:
+  path: "/admin/attendance/remarks/edit/{id}"
+  defaults:
+    _form: '\Drupal\attendance\Form\RemarksForm'
+    _title: "勤怠管理 備考欄編集"
+  requirements:
+    _permission: "access content"
+    id: \d+
+  options:
+    parameters:
+      id:
+        type: "integer"

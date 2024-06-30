@@ -1,0 +1,14 @@
+attendance.admin:
+  title: '勤怠管理'
+  description: '勤怠を記録します'
+  parent: system.admin_content
+  route_name: attendance.form
+  weight: 10
+
+
+attendance.list:
+  title: '勤怠管理一覧'
+  description: '勤怠管理一覧ページ'
+  parent: system.admin_content
+  route_name: attendance.list
+  weight: 100

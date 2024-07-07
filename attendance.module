@@ -32,15 +32,15 @@ use Drupal\Core\Url;
 function attendance_preprocess_views_view_table(&$variables)
 {
   $view = $variables['view'];
-  $variables["header"]["attendance"] = [
-    "content" => "勤怠管理",
-    "default_classes" => true
-  ];
 
   if ($view->id() === 'user_admin_people') {
+    $variables["header"]["attendance"] = [
+      "content" => "勤怠管理",
+      "default_classes" => true
+    ];
+
     foreach ($variables['rows'] as $index => &$row) {
       //dump($row);exit;
- 
       $row["columns"]["attendance"]["content"][] = [
         'field_output' => [
           '#type' => 'link',
